@@ -44,7 +44,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void configureDefaultServletHandling (DefaultServletHandlerConfigurer configurer){
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 
         configurer.enable();
     }
@@ -53,10 +53,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     //@Autowired
     //private Environment env;
 
-    @Value("${datasource.driverClassName}") private String driverClassName;
-    @Value("${datasource.url}") private String url;
-    @Value("${datasource.username}") private String username;
-    @Value("${datasource.password}") private String password;
+    @Value("${datasource.driverClassName}")
+    private String driverClassName;
+    @Value("${datasource.url}")
+    private String url;
+    @Value("${datasource.username}")
+    private String username;
+    @Value("${datasource.password}")
+    private String password;
 
 
     @Bean("dataSource")
@@ -100,10 +104,12 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         resolvers.add(jspViewResolver());
         return resolver;
     }
+
     @Bean
     public ViewResolver jsonViewResolver() {
         return new JsonViewResolver();
     }
+
     @Bean
     public ViewResolver jspViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -113,3 +119,5 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return viewResolver;
     }
 }
+
+
