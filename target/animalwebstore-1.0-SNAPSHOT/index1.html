@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="demo">
+<head>
+    <title>Hello AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="app/app.module.ts"></script>
+</head>
+
+<body>
+<div ng-controller="Hello">
+    <p>
+    <h1>
+        The ID is {{greeting.animalId}}
+</h1>
+    </p>
+    <p class="bg-info text-primary">The content is {{greeting.content}}</p>
+    <input ng-model="myInput">
+    <p>The value of the input field is:</p>
+    <h1>{{myInput}}</h1>
+</div>
+</body>
+</html>

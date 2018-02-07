@@ -21,13 +21,13 @@ public class HomeController {
         model.addAttribute("greeting", "Welcome to Web Store!");
         model.addAttribute("tagline", "The one and only amazing webstore");
 
-        Animal animal = animalService.read(13L);
-        animal.setType("Pies");
+        Animal animal = animalService.read(16L);
+        animal.setType("Papuga");
         animal.setSize("Big");
         animal.setCountry("Polska");
-        animal.setUnitPrice(1000);
+        animal.setUnitPrice(333);
 
-        animalService.update(13L, animal);
+        animalService.update(16L, animal);
         //animalService.delete(12L);
         return "welcome";
     }

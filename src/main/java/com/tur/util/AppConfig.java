@@ -35,13 +35,7 @@ import java.util.List;
 @EnableJpaRepositories(basePackages = "com.tur")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
-    @Bean
-    public InternalResourceViewResolver viewResolver() {
-        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
-        internalResourceViewResolver.setPrefix("/WEB-INF/views/");
-        internalResourceViewResolver.setSuffix(".jsp");
-        return internalResourceViewResolver;
-    }
+
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -101,7 +95,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         List<ViewResolver> resolvers = new ArrayList<ViewResolver>();
 
         resolvers.add(jsonViewResolver());
-        resolvers.add(jspViewResolver());
         return resolver;
     }
 
@@ -110,14 +103,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return new JsonViewResolver();
     }
 
-    @Bean
-    public ViewResolver jspViewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
+
 }
 
 

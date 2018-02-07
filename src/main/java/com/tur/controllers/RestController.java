@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Set;
+
 
 @Controller
 @RequestMapping("/rest")
@@ -36,5 +39,33 @@ public class RestController {
     }
                                                                     //End of **Rest API**
 
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public @ResponseBody List<Animal> getAll() {
+        return animalService.getAll();
+    }
 
+    @RequestMapping(value = "/sA", method = RequestMethod.GET)
+    public @ResponseBody List<Animal> getAllSortedAlphabetically() {
+        return animalService.getAllSortedAlphabetically();
+    }
+
+    @RequestMapping(value = "/sRA", method = RequestMethod.GET)
+    public @ResponseBody List<Animal> getAllSortedReverseAlphabetically() {
+        return animalService.getAllSortedReverseAlphabetically();
+    }
+
+    @RequestMapping(value = "/sPA", method = RequestMethod.GET)
+    public @ResponseBody List<Animal> getAllSortedPriceAscending() {
+        return animalService.getAllSortedPriceAscending();
+    }
+
+    @RequestMapping(value = "/sPD", method = RequestMethod.GET)
+    public @ResponseBody List<Animal> getAllSortedPriceDescending() {
+        return animalService.getAllSortedPriceDescending();
+    }
+
+    @RequestMapping(value = "/aTypes", method = RequestMethod.GET)
+    public @ResponseBody Set<String> getAnimalsTypes() {
+        return animalService.getAnimalsTypes();
+    }
 }
