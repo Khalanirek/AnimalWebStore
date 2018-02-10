@@ -17,6 +17,110 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 
 /***/ }),
 
+/***/ "../../../../../src/app/animal-list/animal-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/animal-list/animal-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n    Default Sort\n  </button>\n  <div *dropdownMenu class=\"dropdown-menu\">\n    <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Cena: od najniższej</a>\n    <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Cena: od najwyższej</a>\n    <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Typ: A-Z</a>\n    <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Typ: Z-A</a>\n  </div>\n</div>\n<div *ngFor=\"let animal of animals\">\n  <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{animal.type}}</h4>\n      <p class=\"card-text\">\n        {{animal.animalId}}<br>\n        {{animal.type}}<br>\n        {{animal.size}}<br>\n        {{animal.country}}<br>\n        {{animal.unitPrice}}\n      </p>\n      <a href=\"#\" class=\"btn btn-primary\">See Profile</a>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/animal-list/animal-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnimalListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AnimalListComponent = /** @class */ (function () {
+    function AnimalListComponent(dataService) {
+        this.dataService = dataService;
+        this.animals = [];
+    }
+    AnimalListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log(this.animals);
+        this.dataService.getAnimals().subscribe(function (res) {
+            console.log(res);
+            _this.animals = res;
+            console.log(_this.animals);
+        });
+    };
+    AnimalListComponent.prototype.sortPriceAscending = function () {
+        var _this = this;
+        this.dataService.getAnimalsSortedPriceAscending().subscribe(function (res) {
+            console.log(res);
+            _this.animals = res;
+            console.log(_this.animals);
+        });
+    };
+    AnimalListComponent.prototype.sortPriceDescending = function () {
+        var _this = this;
+        this.dataService.getAnimalsSortedPriceDescending().subscribe(function (res) {
+            console.log(res);
+            _this.animals = res;
+            console.log(_this.animals);
+        });
+    };
+    AnimalListComponent.prototype.sortAlphabetically = function () {
+        var _this = this;
+        this.dataService.getAnimalsAlphabetically().subscribe(function (res) {
+            console.log(res);
+            _this.animals = res;
+            console.log(_this.animals);
+        });
+    };
+    AnimalListComponent.prototype.sortReverseAlphabetically = function () {
+        var _this = this;
+        this.dataService.getAnimalsReverseAlphabetically().subscribe(function (res) {
+            console.log(res);
+            _this.animals = res;
+            console.log(_this.animals);
+        });
+    };
+    AnimalListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-animal-list',
+            template: __webpack_require__("../../../../../src/app/animal-list/animal-list.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/animal-list/animal-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__data_service__["a" /* DataService */]])
+    ], AnimalListComponent);
+    return AnimalListComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/app-routing.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -25,8 +129,8 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return routingComponents; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_center_view_center_component__ = __webpack_require__("../../../../../src/app/view-center/view-center.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__view_left_view_left_component__ = __webpack_require__("../../../../../src/app/view-left/view-left.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/page-not-found/page-not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__ = __webpack_require__("../../../../../src/app/animal-list/animal-list.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,8 +142,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var routes = [
-    { path: 'center', component: __WEBPACK_IMPORTED_MODULE_2__view_center_view_center_component__["a" /* ViewCenterComponent */] },
-    { path: 'left', component: __WEBPACK_IMPORTED_MODULE_3__view_left_view_left_component__["a" /* ViewLeftComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */] },
+    { path: 'animalList', component: __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -53,7 +158,7 @@ var AppRoutingModule = /** @class */ (function () {
     return AppRoutingModule;
 }());
 
-var routingComponents = [__WEBPACK_IMPORTED_MODULE_2__view_center_view_center_component__["a" /* ViewCenterComponent */], __WEBPACK_IMPORTED_MODULE_3__view_left_view_left_component__["a" /* ViewLeftComponent */]];
+var routingComponents = [__WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */], __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]];
 
 
 /***/ }),
@@ -79,7 +184,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <app-view-top></app-view-top>\r\n <app-view-left></app-view-left>\r\n <app-view-center></app-view-center>\r\n <app-view-right></app-view-right>\r\n <app-view-bottom></app-view-bottom>\r\n\r\n <nav>\r\n   <a routerLink=\"/center\" routerLinkActive=\"\">Center</a>\r\n   <a routerLink=\"/left\" routerLinkActive=\"\">Left</a>\r\n </nav>\r\n <router-outlet></router-outlet>\r\n"
+module.exports = "<app-view-top></app-view-top>\r\n<app-view-left></app-view-left>\r\n<app-view-center></app-view-center>\r\n<app-view-right></app-view-right>\r\n<app-view-bottom></app-view-bottom>\r\n\r\n"
 
 /***/ }),
 
@@ -133,12 +238,24 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/page-not-found/page-not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__animal_list_animal_list_component__ = __webpack_require__("../../../../../src/app/animal-list/animal-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__view_left_view_left_component__ = __webpack_require__("../../../../../src/app/view-left/view-left.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__view_center_view_center_component__ = __webpack_require__("../../../../../src/app/view-center/view-center.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular_font_awesome__ = __webpack_require__("../../../../angular-font-awesome/dist/angular-font-awesome.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__cart_section_cart_section_component__ = __webpack_require__("../../../../../src/app/cart-section/cart-section.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
 
 
 
@@ -160,8 +277,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__view_top_view_top_component__["a" /* ViewTopComponent */],
                 __WEBPACK_IMPORTED_MODULE_6__view_right_view_right_component__["a" /* ViewRightComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__view_left_view_left_component__["a" /* ViewLeftComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__view_center_view_center_component__["a" /* ViewCenterComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__view_bottom_view_bottom_component__["a" /* ViewBottomComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["b" /* routingComponents */]
+                __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["b" /* routingComponents */],
+                __WEBPACK_IMPORTED_MODULE_12__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__animal_list_animal_list_component__["a" /* AnimalListComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__cart_section_cart_section_component__["a" /* CartSectionComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -169,13 +291,75 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__["b" /* TooltipModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__["a" /* ModalModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["a" /* AppRoutingModule */]
+                __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_16_angular_font_awesome__["a" /* AngularFontAwesomeModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */], { provide: __WEBPACK_IMPORTED_MODULE_11__angular_common__["g" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_11__angular_common__["d" /* HashLocationStrategy */] }],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart-section/cart-section.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart-section/cart-section.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"width: 25%; height: 200px; float: left\">\n\n  <div style=\"float: left\">\n    <ul style=\"list-style-type: none\">\n      <li>\n        <button type=\"button\" class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Sign in<br>\n          Create account\n        </button>\n      </li>\n\n      <li>\n        <button type=\"button\" class=\"btn\" style=\"width: 100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-shopping-cart\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Total: 1000,00\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart-section/cart-section.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartSectionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CartSectionComponent = /** @class */ (function () {
+    function CartSectionComponent() {
+    }
+    CartSectionComponent.prototype.ngOnInit = function () {
+    };
+    CartSectionComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-cart-section',
+            template: __webpack_require__("../../../../../src/app/cart-section/cart-section.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/cart-section/cart-section.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CartSectionComponent);
+    return CartSectionComponent;
 }());
 
 
@@ -243,6 +427,67 @@ var DataService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/page-not-found/page-not-found.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/page-not-found/page-not-found.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"alert alert-danger\" align=\"center\">\n  <p>\n    Page not found!\n  </p>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/page-not-found/page-not-found.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageNotFoundComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PageNotFoundComponent = /** @class */ (function () {
+    function PageNotFoundComponent() {
+    }
+    PageNotFoundComponent.prototype.ngOnInit = function () {
+    };
+    PageNotFoundComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-page-not-found',
+            template: __webpack_require__("../../../../../src/app/page-not-found/page-not-found.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/page-not-found/page-not-found.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PageNotFoundComponent);
+    return PageNotFoundComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/view-bottom/view-bottom.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -264,7 +509,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-bottom/view-bottom.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div align=\"center\" style=\"width: 100%; float: left; background: black\">\n<p>\n\n  It is learning project. Do not use it to any comercial production.\n\n</p>\n</div>\n"
+module.exports = "<div align=\"center\" style=\"width: 100%; float: left; background: black\">\n<p>\n\n  It is learning project. Do not use it to any comercial production.\n\n</p>\n\n</div>\n"
 
 /***/ }),
 
@@ -325,7 +570,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-center/view-center.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"float: left; width: 60%\">\n\n  <div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n    <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n      Default Sort\n    </button>\n    <div *dropdownMenu class=\"dropdown-menu\">\n      <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Cena: od najniższej</a>\n      <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Cena: od najwyższej</a>\n      <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Typ: A-Z</a>\n      <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Typ: Z-A</a>\n    </div>\n  </div>\n\n\n  <div *ngFor=\"let animal of animals\">\n    <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">{{animal.type}}</h4>\n        <p class=\"card-text\">\n          {{animal.animalId}}<br>\n          {{animal.type}}<br>\n          {{animal.size}}<br>\n          {{animal.country}}<br>\n          {{animal.unitPrice}}\n        </p>\n        <a href=\"#\" class=\"btn btn-primary\">See Profile</a>\n      </div>\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div style=\"float: left; width: 50%\">\n\n  <router-outlet></router-outlet>\n\n\n</div>\n"
 
 /***/ }),
 
@@ -429,7 +674,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-left/view-left.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 25%; float: left;\" align=\"right\">\n  <button type=\"button\" class=\"btn btn-primary\" style=\"width: 200px; margin: 15px 20px 15px 15px;\">{{currentType}}</button>\n  <div *ngFor=\"let type of animalsTypes\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"currentType=type\" style=\"width: 200px; margin: 10px 15px;\">{{type}}</button>\n  </div>\n</div>\n"
+module.exports = "<div style=\"width: 25%; float: left;\" align=\"right\">\n  <button type=\"button\" disabled=\"true\" class=\"btn btn-primary\" style=\"width: 200px; margin: 15px 15px 25px 15px;\">{{currentType}}</button>\n  <div *ngFor=\"let type of animalsTypes\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"currentType=type\" style=\"width: 200px; margin: 5px 15px;\">{{type}}</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -500,7 +745,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-right/view-right.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 15%; float: left\">\n<p>\n  view-right works!\n</p>\n</div>\n"
+module.exports = "<div style=\"width: 25%; float: left; background: aqua\">\n<p>\n  view-right works!\n</p>\n</div>\n"
 
 /***/ }),
 
@@ -561,7 +806,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-top/view-top.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div align=\"center\" style=\"width: 100%\">\n<p>\n  view-top works!\n</p>\n</div>\n"
+module.exports = "<div style=\"width: 100%\">\n  <p>Wszystko</p>\n\n  <div style=\"width: 25%; float: left\" align=\"right\">\n    <img src=\"./images/AnimalWebStoreIcon.jpg\" width=\"200px\" height=\"200px\"style=\"margin: 0px 15px\">\n  </div>\n\n  <div style=\"width: 34%; height: 200px; float: left\">\n      Empty Section\n  </div>\n\n  <app-cart-section></app-cart-section>\n\n  <div style=\"width: 16%; height: 200px; float: left\">\n      Empty Section\n    </div>\n</div>\n\n"
 
 /***/ }),
 
