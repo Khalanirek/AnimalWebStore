@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/animal-list/animal-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n    Default Sort\n  </button>\n  <div *dropdownMenu class=\"dropdown-menu\">\n    <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Cena: od najniższej</a>\n    <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Cena: od najwyższej</a>\n    <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Typ: A-Z</a>\n    <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Typ: Z-A</a>\n  </div>\n</div>\n<div *ngFor=\"let animal of animals\">\n  <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{animal.type}}</h4>\n      <p class=\"card-text\">\n        {{animal.animalId}}<br>\n        {{animal.type}}<br>\n        {{animal.size}}<br>\n        {{animal.country}}<br>\n        {{animal.unitPrice}}\n      </p>\n      <a href=\"#\" class=\"btn btn-primary\">See Profile</a>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n    Default Sort\n  </button>\n  <div *dropdownMenu class=\"dropdown-menu\">\n    <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Cena: od najniższej</a>\n    <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Cena: od najwyższej</a>\n    <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Typ: A-Z</a>\n    <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Typ: Z-A</a>\n  </div>\n</div>\n<div *ngFor=\"let animal of animals\">\n  <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n    <img class=\"card-img-top\" src=\"./images/{{animal.type}}.jpg\" alt=\"Card image\" style=\"width:100%\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{animal.type}}</h4>\n      <p class=\"card-text\">\n        {{animal.animalId}}<br>\n        {{animal.type}}<br>\n        {{animal.size}}<br>\n        {{animal.country}}<br>\n        {{animal.unitPrice}}\n      </p>\n      <a href=\"#\" class=\"btn btn-primary\">See Profile</a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -150,7 +150,7 @@ var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(routes)],
             exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]]
         })
@@ -184,7 +184,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-view-top></app-view-top>\r\n<app-view-left></app-view-left>\r\n<app-view-center></app-view-center>\r\n<app-view-right></app-view-right>\r\n<app-view-bottom></app-view-bottom>\r\n\r\n"
+module.exports = "<div style=\"width:1440px; margin:0 auto\">\r\n<app-view-top></app-view-top>\r\n<app-view-left></app-view-left>\r\n<app-view-center></app-view-center>\r\n<app-view-bottom></app-view-bottom>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -244,6 +244,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__view_center_view_center_component__ = __webpack_require__("../../../../../src/app/view-center/view-center.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular_font_awesome__ = __webpack_require__("../../../../angular-font-awesome/dist/angular-font-awesome.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__cart_section_cart_section_component__ = __webpack_require__("../../../../../src/app/cart-section/cart-section.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -268,11 +269,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_5__view_top_view_top_component__["a" /* ViewTopComponent */],
@@ -292,7 +294,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__["b" /* TooltipModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__["a" /* ModalModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_16_angular_font_awesome__["a" /* AngularFontAwesomeModule */]
+                __WEBPACK_IMPORTED_MODULE_16_angular_font_awesome__["a" /* AngularFontAwesomeModule */],
+                __WEBPACK_IMPORTED_MODULE_18__ng_bootstrap_ng_bootstrap__["b" /* NgbCarouselModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */], { provide: __WEBPACK_IMPORTED_MODULE_11__angular_common__["g" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_11__angular_common__["d" /* HashLocationStrategy */] }],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
@@ -326,7 +329,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/cart-section/cart-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 25%; height: 200px; float: left\">\n\n  <div style=\"float: left\">\n    <ul style=\"list-style-type: none\">\n      <li>\n        <button type=\"button\" class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Sign in<br>\n          Create account\n        </button>\n      </li>\n\n      <li>\n        <button type=\"button\" class=\"btn\" style=\"width: 100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-shopping-cart\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Total: 1000,00\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n"
+module.exports = "<div style=\"width: 22%; height: 200px; float: left;\">\n\n  <div style=\"float: left\">\n    <ul style=\"list-style-type: none\">\n      <li>\n        <button type=\"button\" class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Sign in<br>\n          Create account\n        </button>\n      </li>\n\n      <li>\n        <button type=\"button\" class=\"btn\" style=\"width: 100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-shopping-cart\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Total: 1000,00\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -397,6 +400,7 @@ var DataService = /** @class */ (function () {
         this.getAllSortedPriceAscendingURL = 'http://localhost:8084/animalwebstore/rest/sPA';
         this.getAllSortedPriceDescendingURL = 'http://localhost:8084/animalwebstore/rest/sRA';
         this.getAnimalsTypesURL = 'http://localhost:8084/animalwebstore/rest/aTypes';
+        this.getAnimalsByTypesURL = 'http://localhost:8084/animalwebstore/rest/aTypes';
     }
     DataService.prototype.getAnimals = function () {
         return this.http.get(this.getAllURL);
@@ -416,8 +420,11 @@ var DataService = /** @class */ (function () {
     DataService.prototype.getAnimalsTypes = function () {
         return this.http.get(this.getAnimalsTypesURL);
     };
+    DataService.prototype.getAnimalsByType = function () {
+        return this.http.get(this.getAnimalsByTypesURL);
+    };
     DataService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], DataService);
     return DataService;
@@ -570,7 +577,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-center/view-center.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"float: left; width: 50%\">\n\n  <router-outlet></router-outlet>\n\n\n</div>\n"
+module.exports = "<div style=\"float: left; width: 67%\">\n\n  <router-outlet></router-outlet>\n\n\n</div>\n"
 
 /***/ }),
 
@@ -674,7 +681,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-left/view-left.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 25%; float: left;\" align=\"right\">\n  <button type=\"button\" disabled=\"true\" class=\"btn btn-primary\" style=\"width: 200px; margin: 15px 15px 25px 15px;\">{{currentType}}</button>\n  <div *ngFor=\"let type of animalsTypes\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"currentType=type\" style=\"width: 200px; margin: 5px 15px;\">{{type}}</button>\n  </div>\n</div>\n"
+module.exports = "<div style=\"width: 25%; float: left;\" align=\"right\">\n  <button type=\"button\" disabled=\"true\" class=\"btn btn-primary\" style=\"width: 200px; margin: 15px 15px 25px 15px;\">{{currentType}}</button>\n  <div *ngFor=\"let type of animalsTypes\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"currentType=type\" style=\"width: 200px; margin: 5px 15px;\">{{type +\"s\"}}</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -706,7 +713,13 @@ var ViewLeftComponent = /** @class */ (function () {
         var _this = this;
         this.dataService.getAnimalsTypes().subscribe(function (res) {
             console.log(res);
-            _this.animalsTypes = res;
+            _this.animalsTypes = res.sort(function (first, second) {
+                if (first > second)
+                    return 1;
+                if (first < second)
+                    return -1;
+                return 0;
+            });
         });
     };
     ViewLeftComponent = __decorate([
@@ -745,7 +758,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-right/view-right.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 25%; float: left; background: aqua\">\n<p>\n  view-right works!\n</p>\n</div>\n"
+module.exports = "<div style=\"width: 10%; float: left\">\n</div>\n"
 
 /***/ }),
 
@@ -806,7 +819,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/view-top/view-top.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 100%\">\n  <p>Wszystko</p>\n\n  <div style=\"width: 25%; float: left\" align=\"right\">\n    <img src=\"./images/AnimalWebStoreIcon.jpg\" width=\"200px\" height=\"200px\"style=\"margin: 0px 15px\">\n  </div>\n\n  <div style=\"width: 34%; height: 200px; float: left\">\n      Empty Section\n  </div>\n\n  <app-cart-section></app-cart-section>\n\n  <div style=\"width: 16%; height: 200px; float: left\">\n      Empty Section\n    </div>\n</div>\n\n"
+module.exports = "<div style=\"width: 100%; height: 210px; float: top; margin-top: 30px\">\n  <div style=\"width: 25%; float: left\" align=\"right\">\n     <img src=\"./images/AnimalWebStoreIcon.jpg\" width=\"200px\" height=\"200px\"style=\"margin: 0px 15px\">\n</div>\n\n  <div style=\"width: 610px; float: left;\">\n    <ngb-carousel style=\"width: 609px;  margin: 0px 15px\">\n      <ng-template ngbSlide>\n        <img src=\"./images/Tygrys.jpg\" alt=\"Random first slide\">\n        <img src=\"./images/Lemur.jpg\"  alt=\"Random second slide\">\n        <img src=\"./images/Lis.jpg\" alt=\"Random third slide\">\n        <div class=\"carousel-caption\">\n          <h3>It is time to take your own animal!</h3>\n        </div>\n      </ng-template>\n      <ng-template ngbSlide>\n        <img src=\"./images/Lemur.jpg\"  alt=\"Random second slide\">\n        <img src=\"./images/Lis.jpg\" alt=\"Random third slide\">\n        <img src=\"./images/Flaming.jpg\" alt=\"Random first slide\">\n        <div class=\"carousel-caption\">\n          <h3>It is time to take your own animal!</h3>\n        </div>\n      </ng-template>\n      <ng-template ngbSlide>\n        <img src=\"./images/Lis.jpg\" alt=\"Random third slide\">\n        <img src=\"./images/Flaming.jpg\" alt=\"Random first slide\">\n        <img src=\"./images/Anakonda.jpg\"  alt=\"Random second slide\">\n        <div class=\"carousel-caption\">\n          <h3>It is time to take your own animal!</h3>\n        </div>\n      </ng-template>\n    </ngb-carousel>\n  </div>\n  <app-cart-section></app-cart-section>\n</div>\n\n"
 
 /***/ }),
 
@@ -816,28 +829,33 @@ module.exports = "<div style=\"width: 100%\">\n  <p>Wszystko</p>\n\n  <div style
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewTopComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+
 
 var ViewTopComponent = /** @class */ (function () {
     function ViewTopComponent() {
     }
+    ViewTopComponent.prototype.onstructor = function (config) {
+        // customize default values of carousels used by this component tree
+        config.interval = 10000;
+        config.wrap = false;
+        config.keyboard = false;
+    };
     ViewTopComponent.prototype.ngOnInit = function () {
     };
     ViewTopComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-view-top',
             template: __webpack_require__("../../../../../src/app/view-top/view-top.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/view-top/view-top.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
+            styles: [__webpack_require__("../../../../../src/app/view-top/view-top.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["a" /* NgbCarouselConfig */]]
+        })
     ], ViewTopComponent);
     return ViewTopComponent;
 }());
@@ -876,7 +894,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });

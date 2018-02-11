@@ -7,31 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17f6161-ea41-4865-b348-2d03ff356357" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.674f50d287a8c48dc19b.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.912ec66d7572ff821749.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.af7ae505a9eed503f8b8.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.b06871f281fee6b241d6.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.fee66e712a8a08eef580.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/AnimalWebStoreIcon.jpg" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/animalwebstore_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/animalwebstore_war.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/animalwebstore_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/animalwebstore_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/inline.bundle.js.map" afterPath="$PROJECT_DIR$/src/main/webapp/inline.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.bundle.js" afterPath="$PROJECT_DIR$/src/main/webapp/main.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.bundle.js.map" afterPath="$PROJECT_DIR$/src/main/webapp/main.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.bundle.js" afterPath="$PROJECT_DIR$/src/main/webapp/styles.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.bundle.js.map" afterPath="$PROJECT_DIR$/src/main/webapp/styles.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vendor.bundle.js" afterPath="$PROJECT_DIR$/src/main/webapp/vendor.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vendor.bundle.js.map" afterPath="$PROJECT_DIR$/src/main/webapp/vendor.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT.war" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/WEB-INF/classes/.netbeans_automatic_build" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.674f50d287a8c48dc19b.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.912ec66d7572ff821749.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.af7ae505a9eed503f8b8.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.b06871f281fee6b241d6.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/fontawesome-webfont.fee66e712a8a08eef580.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/inline.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/inline.bundle.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.bundle.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/polyfills.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/polyfills.bundle.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.bundle.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vendor.bundle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vendor.bundle.js.map" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/inline.bundle.js.map" afterPath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/inline.bundle.js.map" />
       <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/main.bundle.js" afterPath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/main.bundle.js" />
       <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/main.bundle.js.map" afterPath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/main.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/styles.bundle.js" afterPath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/styles.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/styles.bundle.js.map" afterPath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/styles.bundle.js.map" />
       <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/vendor.bundle.js" afterPath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/vendor.bundle.js" />
       <change beforePath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/vendor.bundle.js.map" afterPath="$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/vendor.bundle.js.map" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -103,8 +102,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tur/services/AnimalService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tur/services/implementation/AnimalServiceImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tur/controllers/RestController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
       </list>
     </option>
   </component>
@@ -121,7 +120,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -142,7 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,52 +175,15 @@
               <item name="animalwebstore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animalwebstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animalwebstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tur" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animalwebstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animalwebstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tur" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animalwebstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animalwebstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tur" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animalwebstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animalwebstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animalwebstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animalwebstore" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -241,15 +202,15 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="animalwebstore" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\target\classes" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\src\main\webapp" />
+      <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\.idea\artifacts" />
       <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\target\animalwebstore-1.0-SNAPSHOT" />
       <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\src\main\webapp\images" />
       <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\src\main\resources\images" />
-      <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\target\classes\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Piotrek\IdeaProjects\animalwebstore\target\classes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -531,7 +492,12 @@
       <workItem from="1518257436247" duration="738000" />
       <workItem from="1518258381133" duration="1686000" />
       <workItem from="1518260750949" duration="514000" />
-      <workItem from="1518261537373" duration="5522000" />
+      <workItem from="1518261537373" duration="9915000" />
+      <workItem from="1518289408740" duration="11258000" />
+      <workItem from="1518347157541" duration="1396000" />
+      <workItem from="1518348583045" duration="995000" />
+      <workItem from="1518349611343" duration="583000" />
+      <workItem from="1518350310286" duration="4367000" />
     </task>
     <task id="LOCAL-00001" summary="Start&#10;&#10;- MySQL done&#10;- Spring done&#10;- Json done&#10;- REST done">
       <created>1517334038022</created>
@@ -544,10 +510,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139231000" />
+    <option name="totallyTimeSpent" value="162223000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27056277" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
@@ -566,11 +532,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27056277" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27056277" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38326225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40458423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -639,17 +605,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.ts" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/styles.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/tsconfig.spec.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/polyfills.ts" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/tsconfig.app.json" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/test.ts" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tur/util/JsonViewResolver.java">
@@ -781,16 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/vendor.bundle.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/animalwebstore.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -798,7 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tur/controllers/RestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -814,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="54" column="58" lean-forward="false" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,23 +769,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/animalstore_war_exploded.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/animalstore_war_exploded.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tur/services/AnimalService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/animalwebstore_war_exploded.xml" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/animalwebstore_war_exploded.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/polyfills.bundle.js.map" />
+    <entry file="file://$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/animalwebstore-1.0-SNAPSHOT/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -850,10 +809,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/animalwebstore_war_exploded.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1156">
+          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -866,13 +833,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/vendor.bundle.js.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>animalwebstore:war</last-edited>
+          <last-edited>animalwebstore:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
