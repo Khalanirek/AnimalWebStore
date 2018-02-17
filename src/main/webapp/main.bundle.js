@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/animal-list/animal-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n    {{currentSort}}\n  </button>\n  <div *dropdownMenu class=\"dropdown-menu\">\n    <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Price: Ascending</a>\n    <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Price: Descending</a>\n    <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Type: A-Z</a>\n    <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Type: Z-A</a>\n  </div>\n</div>\n<div *ngFor=\"let animal of animals\">\n  <div *ngIf=\"animal.type + 's' === currentType || currentType === 'All'\">\n    <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n      <img class=\"card-img-top\" src=\"./images/{{animal.type}}.jpg\" alt=\"Card image\" style=\"width:100%\">\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">{{animal.type}}</h4>\n        <p class=\"card-text\">\n        Id: {{animal.animalId}}<br>\n        Type: {{animal.type}}<br>\n        Size: {{animal.size}}<br>\n        Country: {{animal.country}}<br>\n        Unit Price: {{animal.unitPrice}}\n        </p>\n        <a href=\"http://localhost:8084/animalwebstore/#/details\" class=\"btn btn-primary\">Details</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n    {{currentSort}}\n  </button>\n  <div *dropdownMenu class=\"dropdown-menu\">\n    <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Price: Ascending</a>\n    <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Price: Descending</a>\n    <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Type: A-Z</a>\n    <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Type: Z-A</a>\n  </div>\n</div>\n<div *ngFor=\"let animal of animals\">\n  <div *ngIf=\"animal.type + 's' === currentType || currentType === 'All'\">\n    <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n      <img class=\"card-img-top\" src=\"./images/{{animal.type}}.jpg\" alt=\"Card image\" style=\"width:100%\">\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">{{animal.type}}</h4>\n        <p class=\"card-text\">\n        Id: {{animal.animalId}}<br>\n        Type: {{animal.type}}<br>\n        Size: {{animal.size}}<br>\n        Country: {{animal.country}}<br>\n        Unit Price: {{animal.unitPrice}}\n        </p>\n        <button class=\"btn btn-success\" (click)=\"addToCart(animal)\">Add to cart</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -129,6 +129,16 @@ var AnimalListComponent = /** @class */ (function () {
             _this.currentSort = 'Type: Z-A';
         });
     };
+    AnimalListComponent.prototype.addToCart = function (animal) {
+        var _this = this;
+        console.log(animal);
+        this.dataService.addToCart(animal).subscribe(function (res) {
+            _this.test = res;
+            if (res !== animal) {
+                _this.dataService.addToCart(animal);
+            }
+        });
+    };
     AnimalListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-animal-list',
@@ -156,6 +166,8 @@ var AnimalListComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__ = __webpack_require__("../../../../../src/app/animal-list/animal-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__welcome_welcome_component__ = __webpack_require__("../../../../../src/app/welcome/welcome.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__detail_detail_component__ = __webpack_require__("../../../../../src/app/detail/detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cart_cart_component__ = __webpack_require__("../../../../../src/app/cart/cart.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -168,10 +180,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var routes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */] },
     { path: 'details', component: __WEBPACK_IMPORTED_MODULE_5__detail_detail_component__["a" /* DetailComponent */] },
     { path: 'animalList/:currentType', component: __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */] },
+    { path: 'cart', component: __WEBPACK_IMPORTED_MODULE_7__cart_cart_component__["a" /* CartComponent */] },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -186,7 +202,7 @@ var AppRoutingModule = /** @class */ (function () {
     return AppRoutingModule;
 }());
 
-var routingComponents = [__WEBPACK_IMPORTED_MODULE_4__welcome_welcome_component__["a" /* WelcomeComponent */], __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */], __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */], __WEBPACK_IMPORTED_MODULE_5__detail_detail_component__["a" /* DetailComponent */]];
+var routingComponents = [__WEBPACK_IMPORTED_MODULE_4__welcome_welcome_component__["a" /* WelcomeComponent */], __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */], __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */], __WEBPACK_IMPORTED_MODULE_5__detail_detail_component__["a" /* DetailComponent */], __WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */]];
 
 
 /***/ }),
@@ -275,12 +291,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__welcome_welcome_component__ = __webpack_require__("../../../../../src/app/welcome/welcome.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__detail_detail_component__ = __webpack_require__("../../../../../src/app/detail/detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cart_cart_component__ = __webpack_require__("../../../../../src/app/cart/cart.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -319,7 +339,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_13__animal_list_animal_list_component__["a" /* AnimalListComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__cart_section_cart_section_component__["a" /* CartSectionComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__welcome_welcome_component__["a" /* WelcomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__detail_detail_component__["a" /* DetailComponent */]
+                __WEBPACK_IMPORTED_MODULE_20__detail_detail_component__["a" /* DetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__cart_cart_component__["a" /* CartComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -363,7 +385,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/cart-section/cart-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 22%; height: 200px; float: left;\">\n\n  <div style=\"float: left\">\n    <ul style=\"list-style-type: none\">\n      <li>\n        <button type=\"button\" class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Sign in<br>\n          Create account\n        </button>\n      </li>\n\n      <li>\n        <button type=\"button\" class=\"btn\" style=\"width: 100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-shopping-cart\" style=\"font-size: 60px\"></i>\n        </button>\n\n        <button type=\"button\" class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          Total: 1000,00\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n"
+module.exports = "<div style=\"width: 22%; height: 200px; float: left;\">\n\n  <div style=\"float: left\">\n    <ul style=\"list-style-type: none\">\n      <li>\n        <a href=\"http://localhost:8084/animalwebstore/#/login\"  class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px; margin-top: 15px; color: black\"></i>\n        </a>\n\n        <button type=\"button\" disabled class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          <a href=\"http://localhost:8084/animalwebstore/#/login\" style=\"color: black\">\n            Sign in<br>\n            Create account</a>\n        </button>\n      </li>\n\n      <li>\n        <a href=\"http://localhost:8084/animalwebstore/#/cart\" class=\"btn\" style=\"width: 100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-shopping-cart\" style=\"font-size: 60px; margin-top: 10px; color: black\"></i>\n        </a>\n\n        <button type=\"button\" disabled class=\"btn\"  style=\"width:150px; height: 100px; background-color: white;\">\n          <a href=\"http://localhost:8084/animalwebstore/#/cart\" style=\"color: black\">Total: {{totalPrice}},00$</a>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -373,6 +395,7 @@ module.exports = "<div style=\"width: 22%; height: 200px; float: left;\">\n\n  <
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartSectionComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -383,10 +406,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var CartSectionComponent = /** @class */ (function () {
-    function CartSectionComponent() {
+    function CartSectionComponent(dataService) {
+        this.dataService = dataService;
     }
     CartSectionComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
+        this.getCart();
+    };
+    CartSectionComponent.prototype.getCart = function () {
+        var _this = this;
+        this.dataService.getCart().subscribe(function (res) {
+            console.log(res);
+            _this.cart = res;
+            _this.totalPrice = _this.cart.totalPrice;
+        });
     };
     CartSectionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -394,9 +430,107 @@ var CartSectionComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/cart-section/cart-section.component.html"),
             styles: [__webpack_require__("../../../../../src/app/cart-section/cart-section.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__data_service__["a" /* DataService */]])
     ], CartSectionComponent);
     return CartSectionComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<table class=\"table table-striped\">\n  <thead>\n  <tr>\n    <th>Type</th>\n    <th>Id</th>\n    <th>Country</th>\n    <th>Unit Price</th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let cartItem of cartList; let i = index\" class=\"table-striped\">\n    <td>{{cartItem.animal.type}}</td>\n    <td>{{cartItem.animal.animalId}}</td>\n    <td>{{cartItem.animal.country}}</td>\n    <td>{{cartItem.animal.unitPrice}}</td>\n    <button class=\"btn btn-danger\"(click)=\"remove(i); getCart()\" style=\"margin-left: 50px\">Remove from Cart</button>\n  </tr>\n  <tr>\n    <td><b>Total Price:</b>{{'   ' + totalPrice + ',00$'}}</td>\n    <td></td>\n    <td></td>\n    <td></td>\n    <td></td>\n  </tr>\n  </tbody>\n</table>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CartComponent = /** @class */ (function () {
+    function CartComponent(dataService, router) {
+        this.dataService = dataService;
+        this.router = router;
+        this.cartList = [];
+    }
+    CartComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.dataService.getCart().subscribe(function (response) {
+            _this.cart = response;
+            _this.cartList = _this.cart.cartList;
+            console.log(response);
+            _this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
+        });
+        this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
+    };
+    CartComponent.prototype.getCart = function () {
+        var _this = this;
+        this.dataService.getCart().subscribe(function (res) {
+            _this.cart = res;
+            _this.cart.cartList = _this.cart.cartList;
+        });
+    };
+    CartComponent.prototype.remove = function (index) {
+        var _this = this;
+        this.dataService.removeFromCart(index).subscribe(function (res) {
+            _this.done = res;
+            console.log(res);
+            _this.dataService.getCart().subscribe(function (response) {
+                _this.cart = response;
+                _this.cart.cartList = _this.cart.cartList;
+                console.log(response);
+                _this.router.navigate(['/cart']);
+                _this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
+            });
+        });
+        this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
+    };
+    CartComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-cart',
+            template: __webpack_require__("../../../../../src/app/cart/cart.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/cart/cart.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
+    ], CartComponent);
+    return CartComponent;
 }());
 
 
@@ -412,6 +546,7 @@ var CartSectionComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_retry__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/retry.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -425,9 +560,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
+        this.totalPrice = new __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](0);
+        this.currentTotalprice = this.totalPrice.asObservable();
+        this.currentTotalPrice = this.totalPrice.asObservable();
         this.getAllURL = 'http://localhost:8084/animalwebstore/rest/all';
         this.getAllSortedAlphabeticallyURL = 'http://localhost:8084/animalwebstore/rest/sA';
         this.getAllSortedReverseAlphabeticallyURL = 'http://localhost:8084/animalwebstore/rest/sRA';
@@ -435,6 +574,9 @@ var DataService = /** @class */ (function () {
         this.getAllSortedPriceDescendingURL = 'http://localhost:8084/animalwebstore/rest/sRA';
         this.getAnimalsTypesURL = 'http://localhost:8084/animalwebstore/rest/aTypes';
         this.getAnimalsByTypesURL = 'http://localhost:8084/animalwebstore/rest/aTypes';
+        this.getCartURL = 'http://localhost:8084/animalwebstore/rest/cart';
+        this.addToCartURL = 'http://localhost:8084/animalwebstore/rest/cart';
+        this.removeItemFromCartURL = 'http://localhost:8084/animalwebstore/rest/cart/';
     }
     DataService.prototype.getAnimals = function () {
         return this.http.get(this.getAllURL);
@@ -456,6 +598,31 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.getAnimalsByType = function () {
         return this.http.get(this.getAnimalsByTypesURL);
+    };
+    DataService.prototype.getCart = function () {
+        return this.http.get(this.getCartURL);
+    };
+    // Function doesn't work properly because requests are sending too fast.
+    // Read something about promises.(Send second Request after complet first Request)
+    DataService.prototype.addToCart = function (animal) {
+        var _this = this;
+        this.getCart().subscribe(function (res) {
+            _this.cart = res;
+            _this.totalPrice.next(_this.cart.totalPrice);
+        });
+        return this.http.post(this.addToCartURL, animal);
+    };
+    DataService.prototype.totalPriceUpdate = function () {
+        this.totalPrice.next(this.cart.totalPrice);
+    };
+    DataService.prototype.removeFromCart = function (index) {
+        var _this = this;
+        this.getCart().subscribe(function (res) {
+            _this.cart = res;
+            _this.totalPrice.next(_this.cart.totalPrice);
+        });
+        var url = this.removeItemFromCartURL + index;
+        return this.http.delete(url);
     };
     DataService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
@@ -523,6 +690,67 @@ var DetailComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], DetailComponent);
     return DetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  login works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/login/login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent() {
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-login',
+            template: __webpack_require__("../../../../../src/app/login/login.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LoginComponent);
+    return LoginComponent;
 }());
 
 
@@ -931,17 +1159,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 
 var ViewTopComponent = /** @class */ (function () {
-    function ViewTopComponent() {
-    }
-    ViewTopComponent.prototype.onstructor = function (config) {
+    function ViewTopComponent(config) {
         // customize default values of carousels used by this component tree
-        config.interval = 10000;
-        config.wrap = false;
+        config.interval = 5000;
+        config.wrap = true;
         config.keyboard = false;
-    };
+    }
     ViewTopComponent.prototype.ngOnInit = function () {
     };
     ViewTopComponent = __decorate([
@@ -950,7 +1179,8 @@ var ViewTopComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/view-top/view-top.component.html"),
             styles: [__webpack_require__("../../../../../src/app/view-top/view-top.component.css")],
             providers: [__WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["a" /* NgbCarouselConfig */]]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["a" /* NgbCarouselConfig */]])
     ], ViewTopComponent);
     return ViewTopComponent;
 }());
