@@ -39,4 +39,9 @@ public class CartRepositoryImpl implements CartRepository {
     public List<Cart> getAll() {
         return listOfCarts;
     }
+
+    @Override
+    public void clear() {
+        listOfCarts.clear();
+    }
 }

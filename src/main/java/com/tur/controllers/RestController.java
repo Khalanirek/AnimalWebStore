@@ -1,9 +1,12 @@
 package com.tur.controllers;
 
+import com.tur.domain.Account;
 import com.tur.domain.Animal;
 import com.tur.domain.Cart;
 import com.tur.domain.CartItem;
+import com.tur.repository.AccountRepository;
 import com.tur.repository.CartRepository;
+import com.tur.services.AccountService;
 import com.tur.services.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +27,9 @@ public class RestController {
 
     @Autowired
     CartRepository cartRepository;
+
+    @Autowired
+    AccountService accountService;
                                                                     //Start of **REST API**
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody Long create(@RequestBody Animal animal) {
@@ -116,5 +122,24 @@ public class RestController {
         Cart cart = cartRepository.read(0);
         cart.removeCartItem(index);
         return 200L;
+    }
+
+    @RequestMapping(value = "/pay", method = RequestMethod.GET)
+    public @ResponseBody Long pay() {
+        //Check if cart exist
+        cartRepository.clear();
+        return 200L;
+    }
+
+    @RequestMapping(value = "/account", method = RequestMethod.POST)
+    public @ResponseBody Account checkAccount(@RequestBody Account account) {
+
+        return accountService.checkAccount(account);
+    }
+
+    @RequestMapping(value = "/createAccount", method = RequestMethod.POST)
+    public @ResponseBody Account createAccount(@RequestBody Account account) {
+
+        return accountService.createAccount(account);
     }
 }

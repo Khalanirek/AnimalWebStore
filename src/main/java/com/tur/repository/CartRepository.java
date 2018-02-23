@@ -17,4 +17,6 @@ public interface CartRepository {
     void delete(int cartId);
 
     List<Cart> getAll();
+
+    void clear();
 }

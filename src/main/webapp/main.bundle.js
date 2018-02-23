@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/animal-list/animal-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n    {{currentSort}}\n  </button>\n  <div *dropdownMenu class=\"dropdown-menu\">\n    <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Price: Ascending</a>\n    <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Price: Descending</a>\n    <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Type: A-Z</a>\n    <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Type: Z-A</a>\n  </div>\n</div>\n<div *ngFor=\"let animal of animals\">\n  <div *ngIf=\"animal.type + 's' === currentType || currentType === 'All'\">\n    <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n      <img class=\"card-img-top\" src=\"./images/{{animal.type}}.jpg\" alt=\"Card image\" style=\"width:100%\">\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">{{animal.type}}</h4>\n        <p class=\"card-text\">\n        Id: {{animal.animalId}}<br>\n        Type: {{animal.type}}<br>\n        Size: {{animal.size}}<br>\n        Country: {{animal.country}}<br>\n        Unit Price: {{animal.unitPrice}}\n        </p>\n        <button class=\"btn btn-success\" (click)=\"addToCart(animal)\">Add to cart</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div dropdown class=\"dropdown\" style=\"margin: 15px 15px\">\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\"  dropdownToggle>\n    {{currentSort}}\n  </button>\n  <div *dropdownMenu class=\"dropdown-menu\">\n    <a class=\"dropdown-item\" (click)=\"sortPriceAscending()\">Price: Ascending</a>\n    <a class=\"dropdown-item\" (click)=\"sortPriceDescending()\">Price: Descending</a>\n    <a class=\"dropdown-item\" (click)=\"sortAlphabetically()\">Type: A-Z</a>\n    <a class=\"dropdown-item\" (click)=\"sortReverseAlphabetically()\">Type: Z-A</a>\n  </div>\n</div>\n<div *ngFor=\"let animal of animals\">\n  <div *ngIf=\"animal.type + 's' === currentType || currentType === 'All'\">\n    <div class=\"card\" style=\"width: 200px; float: left; margin: 15px 15px\">\n      <img class=\"card-img-top\" src=\"./images/{{animal.type}}.jpg\" alt=\"Card image\" style=\"width:100%\">\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">{{animal.type}}</h4>\n        <p class=\"card-text\">\n        Id: {{animal.animalId}}<br>\n        Type: {{animal.type}}<br>\n        Size: {{animal.size}}<br>\n        Country: {{animal.country}}<br>\n        Unit Price: {{animal.unitPrice + ',00$'}}\n        </p>\n        <button class=\"btn btn-success\" (click)=\"addToCart(animal)\">Add to cart</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -159,7 +159,7 @@ var AnimalListComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return routingComponents; });
+/* unused harmony export routingComponents */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/page-not-found/page-not-found.component.ts");
@@ -168,6 +168,8 @@ var AnimalListComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__detail_detail_component__ = __webpack_require__("../../../../../src/app/detail/detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cart_cart_component__ = __webpack_require__("../../../../../src/app/cart/cart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__create_account_create_account_component__ = __webpack_require__("../../../../../src/app/create-account/create-account.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -182,12 +184,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var routes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */] },
     { path: 'details', component: __WEBPACK_IMPORTED_MODULE_5__detail_detail_component__["a" /* DetailComponent */] },
     { path: 'animalList/:currentType', component: __WEBPACK_IMPORTED_MODULE_3__animal_list_animal_list_component__["a" /* AnimalListComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */] },
     { path: 'cart', component: __WEBPACK_IMPORTED_MODULE_7__cart_cart_component__["a" /* CartComponent */] },
+    { path: 'createAccount', component: __WEBPACK_IMPORTED_MODULE_8__create_account_create_account_component__["a" /* CreateAccountComponent */] },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -195,7 +200,7 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forRoot(routes)],
+            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forRoot(routes), __WEBPACK_IMPORTED_MODULE_9__angular_forms__["a" /* FormsModule */]],
             exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */]]
         })
     ], AppRoutingModule);
@@ -293,12 +298,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__detail_detail_component__ = __webpack_require__("../../../../../src/app/detail/detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__cart_cart_component__ = __webpack_require__("../../../../../src/app/cart/cart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__create_account_create_account_component__ = __webpack_require__("../../../../../src/app/create-account/create-account.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -334,14 +343,14 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__view_left_view_left_component__["a" /* ViewLeftComponent */],
                 __WEBPACK_IMPORTED_MODULE_15__view_center_view_center_component__["a" /* ViewCenterComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__view_bottom_view_bottom_component__["a" /* ViewBottomComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["b" /* routingComponents */],
                 __WEBPACK_IMPORTED_MODULE_12__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__animal_list_animal_list_component__["a" /* AnimalListComponent */],
                 __WEBPACK_IMPORTED_MODULE_17__cart_section_cart_section_component__["a" /* CartSectionComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__welcome_welcome_component__["a" /* WelcomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_20__detail_detail_component__["a" /* DetailComponent */],
                 __WEBPACK_IMPORTED_MODULE_21__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__cart_cart_component__["a" /* CartComponent */]
+                __WEBPACK_IMPORTED_MODULE_22__cart_cart_component__["a" /* CartComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__create_account_create_account_component__["a" /* CreateAccountComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -351,7 +360,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__["a" /* ModalModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_10__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_16_angular_font_awesome__["a" /* AngularFontAwesomeModule */],
-                __WEBPACK_IMPORTED_MODULE_18__ng_bootstrap_ng_bootstrap__["b" /* NgbCarouselModule */]
+                __WEBPACK_IMPORTED_MODULE_18__ng_bootstrap_ng_bootstrap__["b" /* NgbCarouselModule */],
+                __WEBPACK_IMPORTED_MODULE_24__angular_forms__["a" /* FormsModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_4__data_service__["a" /* DataService */], { provide: __WEBPACK_IMPORTED_MODULE_11__angular_common__["g" /* LocationStrategy */], useClass: __WEBPACK_IMPORTED_MODULE_11__angular_common__["d" /* HashLocationStrategy */] }],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
@@ -385,7 +395,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/cart-section/cart-section.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width: 22%; height: 200px; float: left;\">\n\n  <div style=\"float: left\">\n    <ul style=\"list-style-type: none\">\n      <li>\n        <a href=\"http://localhost:8084/animalwebstore/#/login\"  class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px; margin-top: 15px; color: black\"></i>\n        </a>\n\n        <button type=\"button\" disabled class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          <a href=\"http://localhost:8084/animalwebstore/#/login\" style=\"color: black\">\n            Sign in<br>\n            Create account</a>\n        </button>\n      </li>\n\n      <li>\n        <a href=\"http://localhost:8084/animalwebstore/#/cart\" class=\"btn\" style=\"width: 100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-shopping-cart\" style=\"font-size: 60px; margin-top: 10px; color: black\"></i>\n        </a>\n\n        <button type=\"button\" disabled class=\"btn\"  style=\"width:150px; height: 100px; background-color: white;\">\n          <a href=\"http://localhost:8084/animalwebstore/#/cart\" style=\"color: black\">Total: {{totalPrice}},00$</a>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n"
+module.exports = "<div style=\"width: 22%; height: 200px; float: left;\">\n\n  <div style=\"float: left\">\n    <ul style=\"list-style-type: none\">\n      <li *ngIf=\"!login; else elseBlock\">\n        <a href=\"http://localhost:8084/animalwebstore/#/login\"  class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px; margin-top: 15px; color: black\"></i>\n        </a>\n        <button type=\"button\" disabled class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          <a href=\"http://localhost:8084/animalwebstore/#/login\" style=\"color: black\">\n            Sign in<br>\n            Create account</a>\n        </button>\n      </li>\n      <ng-template #elseBlock>\n        <li>\n        <a href=\"http://localhost:8084/animalwebstore/#/login\"  class=\"btn\"  style=\"width:100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-user\" style=\"font-size: 60px; margin-top: 15px; color: black\"></i>\n        </a>\n        <button type=\"button\"  disabled class=\"btn\"  style=\"width:150px; height: 100px; background-color: white\">\n          <a (click)=\"logout()\" href=\"http://localhost:8084/animalwebstore/#/login\" style=\"color: black\">\n            {{account.name + \"\" + account.surname}}<br>\n            Logout</a>\n        </button>\n      </li></ng-template>\n      <li>\n        <a href=\"http://localhost:8084/animalwebstore/#/cart\" class=\"btn\" style=\"width: 100px; height: 100px; background-color: white\">\n          <i class=\"fa fa-shopping-cart\" style=\"font-size: 60px; margin-top: 10px; color: black\"></i>\n        </a>\n\n        <button type=\"button\" disabled class=\"btn\"  style=\"width:150px; height: 100px; background-color: white;\">\n          <a href=\"http://localhost:8084/animalwebstore/#/cart\" style=\"color: black\">Total: {{totalPrice}},00$</a>\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -396,6 +406,7 @@ module.exports = "<div style=\"width: 22%; height: 200px; float: left;\">\n\n  <
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartSectionComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -407,14 +418,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var CartSectionComponent = /** @class */ (function () {
-    function CartSectionComponent(dataService) {
+    function CartSectionComponent(dataService, router) {
         this.dataService = dataService;
+        this.router = router;
+        this.login = true;
+        this.account = {
+            email: '',
+            password: '',
+            name: '',
+            surname: ''
+        };
     }
     CartSectionComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
         this.getCart();
+        this.dataService.currentLogin.subscribe(function (login) { return _this.login = login; });
+        this.dataService.currentAccount.subscribe(function (account) { return _this.account = account; });
     };
     CartSectionComponent.prototype.getCart = function () {
         var _this = this;
@@ -424,13 +446,21 @@ var CartSectionComponent = /** @class */ (function () {
             _this.totalPrice = _this.cart.totalPrice;
         });
     };
+    CartSectionComponent.prototype.logout = function () {
+        var _this = this;
+        this.dataService.pay().subscribe(function (done) { return _this.done = done; });
+        this.getCart();
+        this.dataService.totalPriceUpdate(this.cart);
+        this.dataService.logout();
+        this.router.navigate(['/login']);
+    };
     CartSectionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-cart-section',
             template: __webpack_require__("../../../../../src/app/cart-section/cart-section.component.html"),
             styles: [__webpack_require__("../../../../../src/app/cart-section/cart-section.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__data_service__["a" /* DataService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
     ], CartSectionComponent);
     return CartSectionComponent;
 }());
@@ -460,7 +490,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/cart/cart.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table table-striped\">\n  <thead>\n  <tr>\n    <th>Type</th>\n    <th>Id</th>\n    <th>Country</th>\n    <th>Unit Price</th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let cartItem of cartList; let i = index\" class=\"table-striped\">\n    <td>{{cartItem.animal.type}}</td>\n    <td>{{cartItem.animal.animalId}}</td>\n    <td>{{cartItem.animal.country}}</td>\n    <td>{{cartItem.animal.unitPrice}}</td>\n    <button class=\"btn btn-danger\"(click)=\"remove(i); getCart()\" style=\"margin-left: 50px\">Remove from Cart</button>\n  </tr>\n  <tr>\n    <td><b>Total Price:</b>{{'   ' + totalPrice + ',00$'}}</td>\n    <td></td>\n    <td></td>\n    <td></td>\n    <td></td>\n  </tr>\n  </tbody>\n</table>\n\n"
+module.exports = "<table class=\"table table-striped\">\n  <thead>\n  <tr>\n    <th>Type</th>\n    <th>Id</th>\n    <th>Country</th>\n    <th>Unit Price</th>\n    <th></th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let cartItem of cartList; let i = index\" class=\"table-striped\">\n    <td>{{cartItem.animal.type}}</td>\n    <td>{{cartItem.animal.animalId}}</td>\n    <td>{{cartItem.animal.country}}</td>\n    <td>{{cartItem.animal.unitPrice + ',00$'}}</td>\n    <td><button class=\"btn btn-danger\"(click)=\"remove(i)\" style=\"margin-left: 50px; width: 155px\">Remove from Cart</button></td>\n  </tr>\n  <tr>\n    <td><b>Total Price:</b>{{'   ' + totalPrice + ',00$'}}</td>\n    <td></td>\n    <td></td>\n    <td></td>\n    <td><button class=\"btn btn-success\"(click)=\"pay()\" style=\"margin-left: 50px; width: 155px\">Pay</button></td>\n  </tr>\n  </tbody>\n</table>\n\n"
 
 /***/ }),
 
@@ -492,19 +522,17 @@ var CartComponent = /** @class */ (function () {
     }
     CartComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.dataService.getCart().subscribe(function (response) {
-            _this.cart = response;
-            _this.cartList = _this.cart.cartList;
-            console.log(response);
-            _this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
-        });
+        this.getCart();
         this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
     };
     CartComponent.prototype.getCart = function () {
         var _this = this;
         this.dataService.getCart().subscribe(function (res) {
+            console.log(res);
             _this.cart = res;
-            _this.cart.cartList = _this.cart.cartList;
+            _this.cartList = res.cartList;
+            _this.totalPrice = _this.cart.totalPrice;
+            _this.dataService.totalPriceUpdate(_this.cart);
         });
     };
     CartComponent.prototype.remove = function (index) {
@@ -512,15 +540,16 @@ var CartComponent = /** @class */ (function () {
         this.dataService.removeFromCart(index).subscribe(function (res) {
             _this.done = res;
             console.log(res);
-            _this.dataService.getCart().subscribe(function (response) {
-                _this.cart = response;
-                _this.cart.cartList = _this.cart.cartList;
-                console.log(response);
-                _this.router.navigate(['/cart']);
-                _this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
-            });
+            _this.getCart();
+            _this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
+            _this.router.navigate(['/cart']);
         });
-        this.dataService.currentTotalPrice.subscribe(function (totalPrice) { return _this.totalPrice = totalPrice; });
+    };
+    CartComponent.prototype.pay = function () {
+        var _this = this;
+        this.dataService.pay().subscribe(function (done) { return _this.done = done; });
+        this.getCart();
+        this.router.navigate(['/cart']);
     };
     CartComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -537,6 +566,107 @@ var CartComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/create-account/create-account.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/create-account/create-account.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"margin-top: 15px\">\n  <button type=\"button\" disabled=\"true\" class=\"btn btn-success\" style=\"width: 100%; text-align: left;\">Create Account Form</button>\n\n  <div *ngIf=\"accountExist\" class=\"btn-danger\" style=\"margin-top: 25px\">\n    Account with this e-mail address already exist!\n  </div>\n\n  <div class=\"form-group\" style=\"margin-top: 25px;\">\n    <label for=\"usr\">Name:</label>\n    <input [(ngModel)]=\"name\" type=\"text\" class=\"form-control\" id=\"name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"pwd\">Surname:</label>\n    <input [(ngModel)]=\"surname\" type=\"text\" class=\"form-control\" id=\"sur\">\n  </div>\n  <div class=\"form-group\" style=\"margin-top: 25px;\">\n    <label for=\"usr\">E-mail:</label>\n    <input [(ngModel)]=\"email\" type=\"text\" class=\"form-control\" id=\"usr\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"pwd\">Password:</label>\n    <input [(ngModel)]=\"password\" type=\"password\" class=\"form-control\" id=\"pwd\">\n  </div>\n  <button type=\"submit\" (click)=\"createAccount(email, password, name, surname)\" class=\"btn btn-primary\" style=\"width: 200px;\">Create Account</button>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/create-account/create-account.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateAccountComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CreateAccountComponent = /** @class */ (function () {
+    function CreateAccountComponent(dataService) {
+        this.dataService = dataService;
+        this.password = '';
+        this.email = '';
+        this.name = '';
+        this.surname = '';
+        this.accountExist = false;
+        this.account = {
+            email: '',
+            password: '',
+            name: '',
+            surname: ''
+        };
+    }
+    CreateAccountComponent.prototype.ngOnInit = function () {
+    };
+    CreateAccountComponent.prototype.createAccount = function (email, password, name, surname) {
+        var _this = this;
+        this.account.email = email;
+        this.account.password = password;
+        this.account.name = name;
+        this.account.surname = surname;
+        console.log(this.account);
+        this.dataService.createAccount(this.account).subscribe(function (res) {
+            _this.password = '';
+            _this.email = '';
+            _this.name = '';
+            _this.surname = '';
+            _this.account = res;
+            _this.account.password = '';
+            _this.dataService.updateAccount(_this.account);
+            if (_this.account.name !== '') {
+                _this.accountExist = false;
+                _this.dataService.loginf();
+            }
+            else {
+                _this.accountExist = true;
+            }
+            console.log(_this.account);
+            console.log(res);
+        });
+    };
+    CreateAccountComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-create-account',
+            template: __webpack_require__("../../../../../src/app/create-account/create-account.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/create-account/create-account.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__data_service__["a" /* DataService */]])
+    ], CreateAccountComponent);
+    return CreateAccountComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/data.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -547,6 +677,7 @@ var CartComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_retry__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/retry.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -561,12 +692,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DataService = /** @class */ (function () {
-    function DataService(http) {
+    function DataService(http, router) {
         this.http = http;
+        this.router = router;
         this.totalPrice = new __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](0);
-        this.currentTotalprice = this.totalPrice.asObservable();
+        this.login = new __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](false);
+        this.currentLogin = this.login.asObservable();
         this.currentTotalPrice = this.totalPrice.asObservable();
+        this.account = new __WEBPACK_IMPORTED_MODULE_4_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]({
+            email: '',
+            password: '',
+            name: '',
+            surname: ''
+        });
+        this.currentAccount = this.account.asObservable();
         this.getAllURL = 'http://localhost:8084/animalwebstore/rest/all';
         this.getAllSortedAlphabeticallyURL = 'http://localhost:8084/animalwebstore/rest/sA';
         this.getAllSortedReverseAlphabeticallyURL = 'http://localhost:8084/animalwebstore/rest/sRA';
@@ -577,6 +718,9 @@ var DataService = /** @class */ (function () {
         this.getCartURL = 'http://localhost:8084/animalwebstore/rest/cart';
         this.addToCartURL = 'http://localhost:8084/animalwebstore/rest/cart';
         this.removeItemFromCartURL = 'http://localhost:8084/animalwebstore/rest/cart/';
+        this.payURL = 'http://localhost:8084/animalwebstore/rest/pay';
+        this.getAccountURL = 'http://localhost:8084/animalwebstore/rest/account';
+        this.createAccountURL = 'http://localhost:8084/animalwebstore/rest/createAccount';
     }
     DataService.prototype.getAnimals = function () {
         return this.http.get(this.getAllURL);
@@ -606,27 +750,58 @@ var DataService = /** @class */ (function () {
     // Read something about promises.(Send second Request after complet first Request)
     DataService.prototype.addToCart = function (animal) {
         var _this = this;
+        var response = this.http.post(this.addToCartURL, animal);
         this.getCart().subscribe(function (res) {
             _this.cart = res;
             _this.totalPrice.next(_this.cart.totalPrice);
         });
-        return this.http.post(this.addToCartURL, animal);
+        return response;
     };
-    DataService.prototype.totalPriceUpdate = function () {
-        this.totalPrice.next(this.cart.totalPrice);
+    DataService.prototype.totalPriceUpdate = function (cart) {
+        this.totalPrice.next(cart.totalPrice);
     };
     DataService.prototype.removeFromCart = function (index) {
         var _this = this;
+        var url = this.removeItemFromCartURL + index;
+        var response = this.http.delete(url);
         this.getCart().subscribe(function (res) {
+            if (res.cartList.length === _this.cart.cartList.length) {
+                _this.getCart();
+            }
             _this.cart = res;
             _this.totalPrice.next(_this.cart.totalPrice);
         });
-        var url = this.removeItemFromCartURL + index;
-        return this.http.delete(url);
+        return response;
+    };
+    DataService.prototype.pay = function () {
+        return this.http.get(this.payURL);
+    };
+    DataService.prototype.getAccount = function (account) {
+        return this.http.post(this.getAccountURL, account);
+    };
+    DataService.prototype.createAccount = function (account) {
+        return this.http.post(this.createAccountURL, account);
+    };
+    DataService.prototype.loginf = function () {
+        this.login.next(true);
+        this.router.navigate(['/animalList/All']);
+    };
+    DataService.prototype.logout = function () {
+        this.updateAccount({
+            email: '',
+            password: '',
+            name: '',
+            surname: ''
+        });
+        this.login.next(false);
+        this.router.navigate(['/login']);
+    };
+    DataService.prototype.updateAccount = function (account) {
+        this.account.next(account);
     };
     DataService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]])
     ], DataService);
     return DataService;
 }());
@@ -717,7 +892,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  login works!\n</p>\n"
+module.exports = "<div style=\"margin-top: 15px\">\n  <button type=\"button\" disabled=\"true\" class=\"btn btn-success\" style=\"width: 100%; text-align: left;\">Sign In Form</button>\n\n  <div *ngIf=\"wrongAccount\" class=\"btn-danger\" style=\"margin-top: 25px\">\n    Wrong account e-mail or password! Try again!\n  </div>\n  <div class=\"form-group\" style=\"margin-top: 25px;\">\n  <label for=\"usr\">E-mail:</label>\n  <input [(ngModel)]=\"email\" type=\"text\" class=\"form-control\" id=\"usr\">\n</div>\n<div class=\"form-group\">\n  <label for=\"pwd\">Password:</label>\n  <input [(ngModel)]=\"password\" type=\"password\" class=\"form-control\" id=\"pwd\">\n</div>\n  <button type=\"submit\" (click)=\"getAccount(email, password)\" class=\"btn btn-primary\" style=\"width: 100px;\">Sign In</button>\n  <a href=\"http://localhost:8084/animalwebstore/#/createAccount\" style=\"margin-left: 10px\">Create Account</a>\n</div>\n\n"
 
 /***/ }),
 
@@ -727,6 +902,7 @@ module.exports = "<p>\n  login works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_service__ = __webpack_require__("../../../../../src/app/data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -737,10 +913,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent() {
+    function LoginComponent(dataService) {
+        this.dataService = dataService;
+        this.password = '';
+        this.email = '';
+        this.account = {
+            email: '',
+            password: '',
+            name: '',
+            surname: ''
+        };
+        this.wrongAccount = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.getAccount = function (email, password) {
+        var _this = this;
+        this.account.email = email;
+        this.account.password = password;
+        this.account.name = '';
+        this.account.surname = '';
+        this.email = '';
+        this.password = '';
+        this.dataService.getAccount(this.account).subscribe(function (res) {
+            _this.account = res;
+            console.log(res);
+            _this.account.password = '';
+            _this.dataService.updateAccount(_this.account);
+            console.log(_this.account);
+            if (_this.account.name !== '') {
+                _this.wrongAccount = false;
+                _this.dataService.loginf();
+            }
+            else {
+                _this.wrongAccount = true;
+            }
+        });
     };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -748,7 +958,7 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/login/login.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__data_service__["a" /* DataService */]])
     ], LoginComponent);
     return LoginComponent;
 }());
