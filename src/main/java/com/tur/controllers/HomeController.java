@@ -14,7 +14,11 @@ public class HomeController {
     @Autowired
     AnimalService animalService;
 
-
+    /**
+     * It is method which return name of index.html page. It is one page application.
+     * @param model
+     * @return index.html
+     */
     @RequestMapping("/")
         public String index(Model model){
 
